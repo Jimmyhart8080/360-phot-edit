@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>OmniView 360</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom scrollbar for glass panels */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.4);
+      }
+      body {
+        background-color: #0f172a; /* Slate 900 */
+        color: white;
+        overflow: hidden; /* Prevent scrolling on the main page */
+        touch-action: none; /* Prevent browser gestures */
+        overscroll-behavior: none; /* Prevent pull-to-refresh and rubber-banding */
+      }
+      
+      /* Safe Area Utilities */
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 20px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 20px);
+      }
+      
+      /* Animations */
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in-up {
+        animation: fadeInUp 0.3s ease-out forwards;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "three": "https://aistudiocdn.com/three@^0.181.2",
+    "@react-three/drei": "https://aistudiocdn.com/@react-three/drei@^10.7.7",
+    "@react-three/fiber": "https://aistudiocdn.com/@react-three/fiber@^9.4.2",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
